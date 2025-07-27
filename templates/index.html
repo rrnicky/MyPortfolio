@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rashmi's Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Animate.css for animation effects -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+    <style>
+        .text-muted {
+            color: #adb5bd !important;
+        }
+        .about-box {
+          background-color: #f8f9fa;
+          color: #000;
+          transition: background-color 0.3s, color 0.3s;
+        }
+
+        body.dark-mode .about-box {
+          background-color: #1e1e2f;
+          color: #f1f1f1;
+        }
+        /* Default Light Theme */
+        body {
+          background-color: #ffffff;
+          color: #000000;
+          transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .navbar,
+        .timeline-line {
+          background-color: #1a1a2e;
+        }
+
+        body.dark-mode {
+          background-color: #121212;
+          color: #ffffff;
+        }
+
+        body.dark-mode .navbar {
+          background-color: #0d0d1a;
+        }
+
+        body.dark-mode .timeline-content {
+          background-color: #1e1e2f;
+          color: #f1f1f1;
+        }
+
+        body.dark-mode .description-box {
+          background-color: #1e1e2f;
+        }
+
+        body.dark-mode .card {
+          background-color: #2b2b3d;
+          color: #fff;
+        }
+
+        body.dark-mode a {
+          color: #00d4ff;
+        }
+
+                .timeline {
+          position: relative;
+          padding: 2rem 0;
+        }
+
+        .timeline-line {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 50%;
+          width: 4px;
+          background: #1a1a2e;
+          transform: translateX(-50%);
+          z-index: 1;
+        }
+
+        .timeline-item {
+          position: relative;
+          width: 50%;
+          padding: 1rem 2rem;
+        }
+
+        .timeline-item.left {
+          left: 0;
+          text-align: right;
+        }
+
+        .timeline-item.right {
+          left: 50%;
+          text-align: left;
+        }
+
+        .timeline-icon {
+          position: absolute;
+          top: 0;
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          color: white;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          z-index: 2;
+          font-size: 1.2rem;
+        }
+
+        .timeline-item.left .timeline-icon {
+          right: -20px;
+        }
+
+        .timeline-item.right .timeline-icon {
+          left: -20px;
+        }
+
+        .timeline-content {
+          background: #f8f9fa;
+          border-radius: 10px;
+          padding: 1rem;
+          position: relative;
+          z-index: 2;
+        }
+
+        @media (max-width: 768px) {
+          .timeline-line {
+            left: 8px;
+          }
+
+          .timeline-item {
+            width: 100%;
+            padding-left: 2.5rem;
+            padding-right: 0;
+            text-align: left;
+          }
+
+          .timeline-item.right {
+            left: 0;
+          }
+
+          .timeline-item.left .timeline-icon,
+          .timeline-item.right .timeline-icon {
+            left: 0;
+          }
+        }
+
+        .project-image {
+            width: 200px;
+            height: 200px;
+            object-fit: contain;
+            display: block;
+            margin: 1rem auto;
+            background-color: white;
+            padding: 10px;
+            border-radius: 12px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+        .card-title {
+            margin-bottom: 1rem;
+        }
+        .description-box {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: left;
+        }
+        .ai-wrapper iframe {
+            display: block;
+            width: 100%;
+            height: 300px;
+            border: none;
+            margin-bottom: 0;
+        }
+        .navbar {
+            background-color: #1a1a2e;
+        }
+        .navbar a {
+            color: white;
+            font-weight: 500;
+            margin-right: 20px;
+        }
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+         .section-content {
+            text-align: centre;
+        }
+        .ai-wrapper {
+            margin: 0;
+            padding: 0;
+            line-height: 0;
+        }
+    </style>
+</head>
+<body>
+
+
+    <!-- AI Animation Background Section -->
+    <div class="ai-wrapper">
+        <iframe srcdoc="
+            <style>
+                html, body {
+                    margin: 0;
+                    padding: 0;
+                    background: radial-gradient(ellipse at center, #1a1a2e 0%, #16213e 50%, #0f0f23 100%);
+                    height: 100%;
+                    overflow: hidden;
+                    font-family: 'Arial', sans-serif;
+                }
+                .floating-capability {
+                    position: absolute;
+                    background: rgba(255, 255, 255, 0.1);
+                    border-radius: 15px;
+                    padding: 12px;
+                    color: white;
+                    text-align: center;
+                    width: 140px;
+                    height: 120px;
+                    animation: float-random 10s ease-in-out infinite;
+                    font-size: 0.7rem;
+                }
+                .floating-capability .capability-icon {
+                    font-size: 1.8rem;
+                    margin-bottom: 5px;
+                }
+                @keyframes float-random {
+                    0% { transform: translate(0, 0); }
+                    25% { transform: translate(8px, -12px); }
+                    50% { transform: translate(-10px, 6px); }
+                    75% { transform: translate(6px, 10px); }
+                    100% { transform: translate(0, 0); }
+                }
+                .medical-ai { top: 5%; left: 5%; animation-delay: 0s; }
+                .autonomous-vehicles { top: 5%; right: 5%; animation-delay: 1s; }
+                .smart-home { bottom: 5%; left: 5%; animation-delay: 2s; }
+                .financial-ai { top: 15%; left: 35%; animation-delay: 3s; }
+                .content-creation { bottom: 5%; right: 5%; animation-delay: 4s; }
+                .manufacturing { top: 5%; left: 25%; animation-delay: 5s; }
+                .education-ai { bottom: 15%; left: 35%; animation-delay: 6s; }
+                .cybersecurity { top: 35%; right: 10%; animation-delay: 7s; }
+            </style>
+            <body>
+                <div class='floating-capability medical-ai'><div class='capability-icon'>🏥</div><div>Medical Diagnosis</div></div>
+                <div class='floating-capability autonomous-vehicles'><div class='capability-icon'>🚗</div><div>Autonomous Driving</div></div>
+                <div class='floating-capability smart-home'><div class='capability-icon'>🏠</div><div>Smart Home</div></div>
+                <div class='floating-capability financial-ai'><div class='capability-icon'>💰</div><div>Financial Analysis</div></div>
+                <div class='floating-capability content-creation'><div class='capability-icon'>✨</div><div>Content Creation</div></div>
+                <div class='floating-capability manufacturing'><div class='capability-icon'>🏭</div><div>Smart Manufacturing</div></div>
+                <div class='floating-capability education-ai'><div class='capability-icon'>📚</div><div>Personalized Learning</div></div>
+                <div class='floating-capability cybersecurity'><div class='capability-icon'>🛡️</div><div>Cybersecurity</div></div>
+                    </body>" scrolling="no">
+        </iframe></div>
+        <!-- Navigation Bar -->
+        <nav class="navbar navbar-expand-lg navbar-dark px-4">
+            <a class="navbar-brand" href="#">Rashmi Rani</a>
+
+            <!-- Centered Toggle Button Container -->
+            <div class="mx-auto order-0">
+                <button class="btn btn-outline-light" id="themeToggle">
+                    🌙 Dark Mode
+                </button>
+            </div>
+
+            <div class="collapse navbar-collapse order-1">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+
+    <!-- About Me Section -->
+    <div class="container mt-5 " id="about">
+        <h2 class="text-center mb-4">About Me</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-10">
+                <div class="p-4 rounded about-box">
+                    <p>
+                        Hi, I'm <strong>Rashmi</strong>, a backend software developer and technical project manager with a strong foundation in Python and system design. I bring together the analytical mindset of an engineer and the structured vision of a manager to build practical, impactful tools that solve real-world problems.
+                    </p>
+                    <p>
+                        With a background in <strong>Chemical Engineering</strong> and an <strong>MBA</strong>, I transitioned into tech, working as an <strong>Associate Architect at Virtusa</strong>, where I led backend efforts for various internal tools and client-facing applications.
+                    </p>
+                    <p>
+                        I'm passionate about using <strong>AI</strong>, automation, and clean backend design to simplify workflows and reduce digital clutter. I'm continuously learning and exploring how to make systems more intelligent and user-friendly.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- Skills Section -->
+<div class="container mt-5" id="skills">
+  <h2 class="mb-4 text-center">Skills</h2>
+  <div class="row g-4">
+
+    <!-- Programming & Tools -->
+    <div class="col-md-6 col-lg-3">
+      <div class="card h-100 shadow animate__animated animate__fadeInUp">
+        <div class="card-body">
+          <h5 class="card-title text-center"><i class="bi bi-code-slash me-2"></i>Programming & Tools</h5>
+          <div class="d-flex flex-wrap justify-content-center gap-2 mt-3">
+            <span class="badge bg-secondary">Python</span>
+            <span class="badge bg-secondary">FastAPI</span>
+            <span class="badge bg-secondary">Flask</span>
+            <span class="badge bg-secondary">Django</span>
+            <span class="badge bg-secondary">HTML/CSS</span>
+            <span class="badge bg-secondary">JavaScript</span>
+            <span class="badge bg-secondary">Flutter</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- AI & Data -->
+    <div class="col-md-6 col-lg-3">
+      <div class="card h-100 shadow animate__animated animate__fadeInUp animate__delay-1s">
+        <div class="card-body">
+          <h5 class="card-title text-center"><i class="bi bi-cpu me-2"></i>AI & Data</h5>
+          <div class="d-flex flex-wrap justify-content-center gap-2 mt-3">
+            <span class="badge bg-warning text-dark">Unsupervised Clustering</span>
+            <span class="badge bg-warning text-dark">Image Hashing</span>
+            <span class="badge bg-warning text-dark">LLM APIs</span>
+            <span class="badge bg-warning text-dark">Email Categorization</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dev & Infra -->
+    <div class="col-md-6 col-lg-3">
+      <div class="card h-100 shadow animate__animated animate__fadeInUp animate__delay-2s">
+        <div class="card-body">
+          <h5 class="card-title text-center"><i class="bi bi-hdd-network me-2"></i>Dev & Infra</h5>
+          <div class="d-flex flex-wrap justify-content-center gap-2 mt-3">
+            <span class="badge bg-secondary">Git</span>
+            <span class="badge bg-secondary">GitHub</span>
+            <span class="badge bg-secondary">PostgreSQL</span>
+            <span class="badge bg-secondary">REST APIs</span>
+            <span class="badge bg-secondary">Google OAuth</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project & Communication -->
+    <div class="col-md-6 col-lg-3">
+      <div class="card h-100 shadow animate__animated animate__fadeInUp animate__delay-3s">
+        <div class="card-body">
+          <h5 class="card-title text-center"><i class="bi bi-person-gear me-2"></i>Project & Communication</h5>
+          <div class="d-flex flex-wrap justify-content-center gap-2 mt-3">
+            <span class="badge bg-warning text-dark">System Design</span>
+            <span class="badge bg-warning text-dark">Project Management</span>
+            <span class="badge bg-warning text-dark">Documentation</span>
+            <span class="badge bg-warning text-dark">Agile Practices</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+    <!-- Portfolio Content -->
+    <div class="container mt-5" id="projects">
+        <h2 class="text-center mb-4">Projects</h2>
+        <div class="row">
+            {% for project in projects %}
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <img src="{{ url_for('static', filename=project.img) }}" alt="{{ project.title }} logo" class="project-image">
+                            <h5 class="card-title text-center">{{ project.title }}</h5>
+                            <div class="project-description">
+                                <p class="card-text text-start">{{ project.desc }}</p>
+                                <p class="text-start"><strong>Technologies:</strong> {{ project.tech | join(', ') }}</p>
+                            </div>
+                            {% if project.link != '#' %}
+                                <div class="text-center mt-3">
+                                    <a href="{{ project.link }}" class="btn btn-primary">View Project</a>
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- Experience Section -->
+<!-- Experience Timeline Section -->
+<div class="container mt-5" id="experience">
+  <h2 class="text-center mb-5">Professional Journey</h2>
+  <div class="timeline position-relative">
+
+    <!-- Timeline line -->
+    <div class="timeline-line"></div>
+
+    <!-- Item 1 (Left) -->
+    <div class="timeline-item left animate__animated animate__fadeInLeft">
+      <div class="timeline-icon bg-primary"><i class="bi bi-diagram-3"></i></div>
+      <div class="timeline-content shadow-sm">
+        <h5>Virtusa – Associate Manager</h5>
+        <small class="text-muted">Oct 2020 – Present</small>
+        <p class="mt-2 small">
+          At Virtusa, I led the backend development of tools that automated data workflows and enhanced system reliability for Clarivate. I built an XML-to-text document converter with AWS S3 integration, a dynamic rule-based data validation engine, and synchronization tools to maintain consistency across MongoDB, Snowflake, and S3. I also contributed to a multilingual translation web app with ML-based cost optimization, and developed real-time data feeders. Alongside development, I mentored junior team members and collaborated closely with cross-functional teams in agile environments.
+        </p>
+      </div>
+    </div>
+
+    <!-- Item 2 (Right) -->
+    <div class="timeline-item right animate__animated animate__fadeInRight animate__delay-1s">
+      <div class="timeline-icon bg-success"><i class="bi bi-person-heart"></i></div>
+      <div class="timeline-content shadow-sm">
+        <h5>Teach For India – Leadership Fellow</h5>
+        <small class="text-muted">May 2016 – May 2018</small>
+        <p class="mt-2 small">
+          Used clustering to personalize learning; boosted Maths scores by 48% and Reading by 20%.
+        </p>
+      </div>
+    </div>
+
+    <!-- Item 3 (Left) -->
+    <div class="timeline-item left animate__animated animate__fadeInLeft animate__delay-2s">
+      <div class="timeline-icon bg-warning"><i class="bi bi-building-gear"></i></div>
+      <div class="timeline-content shadow-sm">
+        <h5>ACC Limited – Deputy Manager</h5>
+        <small class="text-muted">Jul 2011 – May 2016</small>
+        <p class="mt-2 small">
+          Led ₹680 Cr expansion; improved fuel efficiency 30% using analytics. Built dashboards for plant ops.
+        </p>
+      </div>
+    </div>
+
+    <!-- Item 4 (Right) -->
+    <div class="timeline-item right animate__animated animate__fadeInRight animate__delay-3s">
+      <div class="timeline-icon bg-info"><i class="bi bi-mortarboard-fill"></i></div>
+      <div class="timeline-content shadow-sm">
+        <h5>Education</h5>
+<!--        <small class="text-muted">IIM Lucknow & IIT Kanpur</small>-->
+        <p class="mt-2 small">
+          <small class="text-muted">2019-20</small> MBA – IIM Lucknow <br>
+          <small class="text-muted">2007-11</small> B.Tech – Chemical Engineering, IIT Kanpur
+        </p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+    <!-- Resume & Contact Section -->
+    <div class="container mt-5 mb-5 section-content" id="contact">
+        <h2 class="text-center mb-4">Reach Me On</h2>
+        <div class="text-center">
+            <p>Email: <a href="mailto:rashmi@example.com">rashmi@example.com</a></p>
+            <p>GitHub: <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></p>
+            <p>LinkedIn: <a href="https://linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a></p>
+            <a class="btn btn-outline-primary mt-3" href="/static/Rashmi_Resume.pdf" download>Download My Resume</a>
+        </div>
+    </div>
+    <script>
+  const toggleBtn = document.getElementById('themeToggle');
+  const body = document.body;
+
+  // Apply saved theme on load
+  if (localStorage.getItem('theme') === 'dark') {
+    body.classList.add('dark-mode');
+    toggleBtn.innerText = '☀️ Light Mode';
+  }
+
+  toggleBtn.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
+    const isDark = body.classList.contains('dark-mode');
+    toggleBtn.innerText = isDark ? '☀️ Light Mode' : '🌙 Dark Mode';
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  });
+</script>
+</body>
+</html>

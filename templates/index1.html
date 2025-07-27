@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rashmi's Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+  <!-- Hero -->
+  <section class="text-center py-16 bg-white">
+    <h1 class="text-4xl font-bold">Rashmi</h1>
+    <p class="mt-2 text-lg">{{ role }}</p>
+    <p class="text-gray-600 mt-4">{{ tagline }}</p>
+  </section>
+
+  <!-- Skills -->
+  <section class="py-8 container mx-auto text-center">
+    {% for skill in skills %}
+      <span class="inline-block bg-blue-200 text-blue-800 px-4 py-2 m-1 rounded-full">{{ skill }}</span>
+    {% endfor %}
+  </section>
+
+  <!-- Projects -->
+  <section class="py-8 container mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+    {% for p in projects %}
+      <div class="bg-white p-6 rounded-lg shadow">
+        <img src="{{ url_for('static', filename=p.img) }}" alt="" class="h-40 w-full object-cover rounded">
+        <h3 class="text-xl font-semibold mt-4">{{ p.title }}</h3>
+        <p class="mt-2 text-gray-600">{{ p.desc }}</p>
+        <p class="text-sm text-gray-500 mt-2">{{ p.tech|join(', ') }}</p>
+        <a href="{{ p.link }}" class="inline-block mt-4 bg-blue-600 text-white px-4 py-2 rounded">View</a>
+      </div>
+    {% endfor %}
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-6 bg-white text-center text-gray-500">
+    <p>Connect with me on <a href="#" class="text-blue-600">GitHub</a> & <a href="#" class="text-blue-600">LinkedIn</a></p>
+  </footer>
+</body>
+</html>

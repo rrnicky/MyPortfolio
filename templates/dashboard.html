@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Dashboard – Portfolio</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background: #0d1117;
+      color: #c9d1d9;
+    }
+
+    .dashboard {
+      background: #0d1117;
+      padding: 40px 20px;
+    }
+
+    .row {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+
+
+    .chart-box {
+      background: #161b22;
+      border-radius: 12px;
+      padding: 10px;
+      width: 30%;
+      max-width: 400px;
+      min-width: 250px;
+      height: 280px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+      flex: 1 1 30%;
+    }
+
+
+    canvas {
+      width: 100% !important;
+      height: 100% !important;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="dashboard">
+    <div class="row">
+      <div class="chart-box"><canvas id="papersChart"></canvas></div>
+      <div class="chart-box"><canvas id="computeChart"></canvas></div>
+      <div class="chart-box"><canvas id="fundingChart"></canvas></div>
+    </div>
+    <div class="row">
+      <div class="chart-box"><canvas id="moocChart"></canvas></div>
+      <div class="chart-box"><canvas id="interestChart"></canvas></div>
+    </div>
+  </div>
+
+  <script>
+    window.onload = () => {
+      const years = [1975, 1980, 1990, 2000, 2010, 2020, 2023];
+      const papersData = [100, 300, 2000, 5000, 25000, 150000, 200000];
+      const computeData = [0.0001, 0.001, 0.01, 0.1, 1, 3.1, 20];
+      const fundingData = [0.01, 0.1, 1, 5, 10, 40, 92];
+      const moocData = [0, 0, 0, 0, 100000, 1000000, 6000000];
+      const interestData = [5, 10, 30, 40, 60, 90, 100];
+
+      const createChart = (id, label, data, color, yLabel) => {
+        const ctx = document.getElementById(id).getContext('2d');
+        new Chart(ctx, {
+          type: 'line',
+          data: {
+            labels: years,
+            datasets: [{
+              label,
+              data,
+              borderColor: color,
+              backgroundColor: color + '33',
+              tension: 0.3,
+              fill: true,
+              pointRadius: 3
+            }]
+          },
+          options: {
+            maintainAspectRatio: false,
+            responsive: true,
+            scales: {
+              y: {
+                beginAtZero: true,
+                title: { display: true, text: yLabel, color: '#c9d1d9' },
+                ticks: { color: '#c9d1d9' }
+              },
+              x: {
+                ticks: { color: '#c9d1d9' }
+              }
+            },
+            plugins: {
+              legend: {
+                labels: { color: '#c9d1d9' }
+              }
+            }
+          }
+        });
+      };
+
+      createChart('papersChart', 'AI Research Papers', papersData, '#58a6ff', 'Papers');
+      createChart('computeChart', 'Compute Power (ZFLOPs)', computeData, '#8b949e', 'ZFLOPs');
+      createChart('fundingChart', 'VC Funding ($B)', fundingData, '#3fb950', 'USD');
+      createChart('moocChart', 'MOOC Learners', moocData, '#f778ba', 'Learners');
+      createChart('interestChart', 'Public Interest Index', interestData, '#ff7b72', 'Interest');
+    };
+  </script>
+
+</body>
+</html>

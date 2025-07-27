@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rashmi's Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Include your AI animation CSS styles here */
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow-x: hidden;
+        }
+        .ai-wrapper iframe {
+            width: 100%;
+            height: 50vh;
+            border: none;
+        }
+        .project-image {
+            width: 200px;
+            height: 200px;
+            object-fit: contain;
+            display: block;
+            margin: 1rem auto;
+            background-color: white;
+            padding: 10px;
+            border-radius: 12px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark px-4 sticky-top">
+        <a class="navbar-brand" href="#">Rashmi</a>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    <!-- AI Animation Background Section -->
+    <div class="ai-wrapper">
+        <!-- Embedded or referenced AI animation section from external or internal file -->
+        <!-- Replace this with your animation content -->
+        <iframe srcdoc="
+            <style>
+                html, body {
+                    margin: 0;
+                    padding: 0;
+                    background: radial-gradient(ellipse at center, #1a1a2e 0%, #16213e 50%, #0f0f23 100%);
+                    height: 100%;
+                    overflow: hidden;
+                    font-family: 'Arial', sans-serif;
+                }
+                .floating-capability {
+                    position: absolute;
+                    background: rgba(255, 255, 255, 0.1);
+                    border-radius: 15px;
+                    padding: 12px;
+                    color: white;
+                    text-align: center;
+                    width: 140px;
+                    height: 120px;
+                    animation: float-random 4s ease-in-out infinite;
+                    font-size: 0.7rem;
+                }
+                .floating-capability .capability-icon {
+                    font-size: 1.8rem;
+                    margin-bottom: 5px;
+                }
+                @keyframes float-random {
+                     0%   { transform: translate(0, 0); }
+                     25%  { transform: translate(5px, -10px); }
+                     50%  { transform: translate(-10px, 5px); }
+                     75%  { transform: translate(8px, 10px); }
+                     100% { transform: translate(0, 0); }
+                }
+                .medical-ai { top: 5%; left: 5%; }
+                .autonomous-vehicles { top: 5%; right: 5%; }
+                .smart-home { bottom: 5%; left: 5%; }
+                .financial-ai { top: 15%; left: 35%; }
+                .content-creation { bottom: 5%; right: 5%; }
+                .manufacturing { top: 5%; left: 25%; }
+                .education-ai { bottom: 15%; left: 35%; }
+                .cybersecurity { top: 35%; right: 10%; }
+            </style>
+            <body>
+                <div class='floating-capability medical-ai'><div class='capability-icon'>🏥</div><div>Medical Diagnosis</div></div>
+                <div class='floating-capability autonomous-vehicles'><div class='capability-icon'>🚗</div><div>Autonomous Driving</div></div>
+                <div class='floating-capability smart-home'><div class='capability-icon'>🏠</div><div>Smart Home</div></div>
+                <div class='floating-capability financial-ai'><div class='capability-icon'>💰</div><div>Financial Analysis</div></div>
+                <div class='floating-capability content-creation'><div class='capability-icon'>✨</div><div>Content Creation</div></div>
+                <div class='floating-capability manufacturing'><div class='capability-icon'>🏭</div><div>Smart Manufacturing</div></div>
+                <div class='floating-capability education-ai'><div class='capability-icon'>📚</div><div>Personalized Learning</div></div>
+                <div class='floating-capability cybersecurity'><div class='capability-icon'>🛡️</div><div>Cybersecurity</div></div>
+            </body>" scrolling="no"></iframe>
+    </div>
+
+    <!-- Portfolio Content -->
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Rashmi's Project Portfolio</h1>
+        <div class="row">
+            {% for project in projects %}
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <img src="{{ url_for('static', filename=project.img) }}" alt="{{ project.title }} logo" class="project-image">
+                            <h5 class="card-title text-center">{{ project.title }}</h5>
+                            <div class="project-description">
+                                <p class="card-text text-start">{{ project.desc }}</p>
+                                <p class="text-start"><strong>Technologies:</strong> {{ project.tech | join(', ') }}</p>
+                            </div>
+                            {% if project.link != '#' %}
+                                <div class="text-center mt-3">
+                                    <a href="{{ project.link }}" class="btn btn-primary">View Project</a>
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
