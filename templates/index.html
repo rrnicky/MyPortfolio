@@ -13,6 +13,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
     <style>
+        .custom-title {
+            color: #5A8DEE; /* Replace with your desired color */
+        }
         .text-muted {
             color: #adb5bd !important;
         }
@@ -150,8 +153,8 @@
         }
 
         .project-image {
-            width: 200px;
-            height: 200px;
+            width: 150px;
+            height: 150px;
             object-fit: contain;
             display: block;
             margin: 1rem auto;
@@ -256,26 +259,30 @@
                     </body>" scrolling="no">
         </iframe></div>
         <!-- Navigation Bar -->
-        <nav class="navbar navbar-expand-lg navbar-dark px-4">
+       <nav class="navbar navbar-expand-lg navbar-dark px-4 position-relative">
+          <div class="container-fluid">
+            <!-- Left side: Brand -->
             <a class="navbar-brand" href="#">Rashmi Rani</a>
 
-            <!-- Centered Toggle Button Container -->
-            <div class="mx-auto order-0">
-                <button class="btn btn-outline-light" id="themeToggle">
-                    🌙 Dark Mode
-                </button>
+            <!-- Center: Toggle button absolutely positioned -->
+            <div class="position-absolute start-50 translate-middle-x">
+              <button class="btn btn-outline-light" id="themeToggle">🌙 Dark Mode</button>
             </div>
 
-            <div class="collapse navbar-collapse order-1">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                </ul>
+            <!-- Right side: Menu -->
+            <div class="collapse navbar-collapse justify-content-end">
+              <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                <li class="nav-item"><a class="nav-link" href="#strategic">Projects</a></li>
+                <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+              </ul>
             </div>
+          </div>
         </nav>
+
+
 
     <!-- About Me Section -->
     <div class="container mt-5 " id="about">
@@ -284,13 +291,13 @@
             <div class="col-md-10">
                 <div class="p-4 rounded about-box">
                     <p>
-                        Hi, I'm <strong>Rashmi</strong>, a backend software developer and technical project manager with a strong foundation in Python and system design. I bring together the analytical mindset of an engineer and the structured vision of a manager to build practical, impactful tools that solve real-world problems.
+                      Hi, I'm <strong>Rashmi</strong> — a results-driven technical project manager and solution architect with a unique blend of engineering precision and business strategy. My career spans leading cross-functional teams, delivering AI-powered backend solutions, and ensuring execution excellence across product lifecycles.
                     </p>
                     <p>
-                        With a background in <strong>Chemical Engineering</strong> and an <strong>MBA</strong>, I transitioned into tech, working as an <strong>Associate Architect at Virtusa</strong>, where I led backend efforts for various internal tools and client-facing applications.
+                      With a foundation in <strong>Chemical Engineering from IIT Kanpur</strong> and an <strong>MBA from IIM Lucknow</strong>, I bring a structured and analytical approach to project leadership. At Virtusa, I led backend development for automation tools across diverse domains like document processing, data validation, and multilingual translation—streamlining operations and reducing manual overhead.
                     </p>
                     <p>
-                        I'm passionate about using <strong>AI</strong>, automation, and clean backend design to simplify workflows and reduce digital clutter. I'm continuously learning and exploring how to make systems more intelligent and user-friendly.
+                      I'm passionate about building teams, aligning product goals with business outcomes, and enabling smarter systems through clean architecture and automation. I thrive at the intersection of people, processes, and technology—transforming complex challenges into high-impact solutions.
                     </p>
                 </div>
             </div>
@@ -313,8 +320,8 @@
             <span class="badge bg-secondary">Flask</span>
             <span class="badge bg-secondary">Django</span>
             <span class="badge bg-secondary">HTML/CSS</span>
-            <span class="badge bg-secondary">JavaScript</span>
-            <span class="badge bg-secondary">Flutter</span>
+<!--            <span class="badge bg-secondary">JavaScript</span>-->
+<!--            <span class="badge bg-secondary">Flutter</span>-->
           </div>
         </div>
       </div>
@@ -344,8 +351,10 @@
             <span class="badge bg-secondary">Git</span>
             <span class="badge bg-secondary">GitHub</span>
             <span class="badge bg-secondary">PostgreSQL</span>
+              <span class="badge bg-secondary">MongoDB</span>
             <span class="badge bg-secondary">REST APIs</span>
             <span class="badge bg-secondary">Google OAuth</span>
+              <span class="badge bg-secondary">AWS</span>
           </div>
         </div>
       </div>
@@ -361,6 +370,7 @@
             <span class="badge bg-warning text-dark">Project Management</span>
             <span class="badge bg-warning text-dark">Documentation</span>
             <span class="badge bg-warning text-dark">Agile Practices</span>
+              <span class="badge bg-warning text-dark">Jira</span>
           </div>
         </div>
       </div>
@@ -369,16 +379,60 @@
   </div>
 </div>
 
-    <!-- Portfolio Content -->
+    <br>
+    <!-- Strategic Deliverables Section -->
+<div class="container mt-5" id="strategic">
+  <h2 class="text-center mb-4">Strategic Deliverables</h2>
+  <div class="row">
+    <div class="col-md-6 mb-4">
+      <div class="card p-4 h-100 shadow-sm">
+        <h4 class="card-title custom-title">🔄 Document Conversion Framework</h4>
+        <p class="card-text">Led the end-to-end delivery of an automated document conversion system using user-defined mapping logic. Integrated seamlessly with AWS S3 and scheduled operations through cronjobs, enhancing document processing efficiency and scalability across business units.</p>
+      </div>
+    </div>
+    <div class="col-md-6 mb-4">
+      <div class="card p-4 h-100 shadow-sm">
+        <h4 class="card-title custom-title">✅ Data Validation Platform</h4>
+        <p class="card-text">Designed and executed a dynamic rules-based data validation platform that significantly reduced manual analyst effort. Oversaw requirement gathering, system design, and rollout, ensuring adaptability across multiple data workflows.</p>
+      </div>
+    </div>
+    <div class="col-md-6 mb-4">
+      <div class="card p-4 h-100 shadow-sm">
+        <h4 class="card-title custom-title">🔁 Data Synchronization Engine</h4>
+        <p class="card-text">Directed the development of a cronjob-based engine to detect and resolve mismatches across MongoDB, AWS S3, and Snowflake. Enabled consistent data integrity and transparency across systems through proactive monitoring tools.</p>
+      </div>
+    </div>
+    <div class="col-md-6 mb-4">
+      <div class="card p-4 h-100 shadow-sm">
+        <h4 class="card-title custom-title">🧾 Indexing Automation Tool</h4>
+        <p class="card-text">Collaborated on the architecture of a rule-based indexing engine to automate the generation and lifecycle management of global trademark indexes. Enabled faster turnaround times for trademark data processing with improved accuracy.</p>
+      </div>
+    </div>
+    <div class="col-md-6 mb-4">
+      <div class="card p-4 h-100 shadow-sm">
+        <h4 class="card-title custom-title">📤 Real-Time Data Feeder</h4>
+        <p class="card-text">Delivered a robust real-time data publication system from MongoDB to AWS S3 using both event-driven and manual triggers. Managed stakeholder expectations, performance tuning, and ensured smooth deployment.</p>
+      </div>
+    </div>
+    <div class="col-md-6 mb-4">
+      <div class="card p-4 h-100 shadow-sm">
+        <h4 class="card-title custom-title">🌍 Multilingual Translation WebApp</h4>
+        <p class="card-text">Contributed to a multilingual Cognito-based translation platform supporting 30+ languages. Introduced ML-based caching logic to reduce translation costs while improving responsiveness for global users.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <!-- personal projects -->
     <div class="container mt-5" id="projects">
-        <h2 class="text-center mb-4">Projects</h2>
+        <h2 class="text-center mb-4">Independent Initiatives</h2>
         <div class="row">
             {% for project in projects %}
                 <div class="col-md-4">
                     <div class="card mb-4">
                         <div class="card-body">
                             <img src="{{ url_for('static', filename=project.img) }}" alt="{{ project.title }} logo" class="project-image">
-                            <h5 class="card-title text-center">{{ project.title }}</h5>
+                            <h4 class="card-title text-center custom-title">{{ project.title }}</h4>
                             <div class="project-description">
                                 <p class="card-text text-start">{{ project.desc }}</p>
                                 <p class="text-start"><strong>Technologies:</strong> {{ project.tech | join(', ') }}</p>
@@ -401,15 +455,14 @@
   <h2 class="text-center mb-5">Professional Journey</h2>
   <div class="timeline position-relative">
 
-    <!-- Timeline line -->
-    <div class="timeline-line"></div>
+
 
     <!-- Item 1 (Left) -->
     <div class="timeline-item left animate__animated animate__fadeInLeft">
-      <div class="timeline-icon bg-primary"><i class="bi bi-diagram-3"></i></div>
+      <div class="timeline-icon bg-primary"><i class="bi bi-diagram-3-fill"></i></div>
       <div class="timeline-content shadow-sm">
         <h5>Virtusa – Associate Manager</h5>
-        <small class="text-muted">Oct 2020 – Present</small>
+        <small class="text-muted">Oct 2020 – Oct 2024</small>
         <p class="mt-2 small">
           At Virtusa, I led the backend development of tools that automated data workflows and enhanced system reliability for Clarivate. I built an XML-to-text document converter with AWS S3 integration, a dynamic rule-based data validation engine, and synchronization tools to maintain consistency across MongoDB, Snowflake, and S3. I also contributed to a multilingual translation web app with ML-based cost optimization, and developed real-time data feeders. Alongside development, I mentored junior team members and collaborated closely with cross-functional teams in agile environments.
         </p>
@@ -440,6 +493,9 @@
       </div>
     </div>
 
+      <!-- Timeline line -->
+    <div class="timeline-line"></div>
+
     <!-- Item 4 (Right) -->
     <div class="timeline-item right animate__animated animate__fadeInRight animate__delay-3s">
       <div class="timeline-icon bg-info"><i class="bi bi-mortarboard-fill"></i></div>
@@ -447,8 +503,8 @@
         <h5>Education</h5>
 <!--        <small class="text-muted">IIM Lucknow & IIT Kanpur</small>-->
         <p class="mt-2 small">
-          <small class="text-muted">2019-20</small> MBA – IIM Lucknow <br>
-          <small class="text-muted">2007-11</small> B.Tech – Chemical Engineering, IIT Kanpur
+          <small class="text-muted">2019-20 </small> MBA – IIM Lucknow <br>
+          <small class="text-muted">2007-11 </small> B.Tech – Chemical Engineering, IIT Kanpur
         </p>
       </div>
     </div>
@@ -458,15 +514,27 @@
 
 
     <!-- Resume & Contact Section -->
-    <div class="container mt-5 mb-5 section-content" id="contact">
-        <h2 class="text-center mb-4">Reach Me On</h2>
-        <div class="text-center">
-            <p>Email: <a href="mailto:rashmi@example.com">rashmi@example.com</a></p>
-            <p>GitHub: <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></p>
-            <p>LinkedIn: <a href="https://linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a></p>
-            <a class="btn btn-outline-primary mt-3" href="/static/Rashmi_Resume.pdf" download>Download My Resume</a>
-        </div>
-    </div>
+    <!-- Reach Me On Section -->
+<div class="container mt-5 mb-5 text-center" id="contact">
+  <h2 class="mb-4">Reach Me On</h2>
+  <div class="d-flex justify-content-center gap-4">
+    <!-- Gmail Icon -->
+    <a href="mailto:rashmi16.iitk@gmail.com" target="_blank" title="Email" style="font-size: 2rem; color: #EA4335;">
+      <i class="bi bi-envelope-fill"></i>
+    </a>
+
+    <!-- GitHub Icon -->
+    <a href="https://github.com/rrnicky" target="_blank" title="GitHub" style="font-size: 2rem; color: #333;">
+      <i class="bi bi-github"></i>
+    </a>
+
+    <!-- LinkedIn Icon -->
+    <a href="https://www.linkedin.com/in/rashmi-rani-1292891a/" target="_blank" title="LinkedIn" style="font-size: 2rem; color: #0A66C2;">
+      <i class="bi bi-linkedin"></i>
+    </a>
+  </div>
+</div>
+
     <script>
   const toggleBtn = document.getElementById('themeToggle');
   const body = document.body;
